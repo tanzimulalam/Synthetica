@@ -12,8 +12,7 @@ relationship_map = {
     "vulnerability": {"malware": ["exploits"]},
     "attack-pattern": {"malware": ["delivers"],"identity": ["targets"], "vulnerability": ["targets"],"tool": ["uses"] },
     "tool": {"threat-actor": ["uses"], "malware": ["uses"]},
-    "course-of-action" : {"indicator" : ["investigates"],  "observed-data" : ["based-on"], "indicator" : ["mitigates"], "attack-pattern" : ["mitigates"], "malware" : ["remediates"], "vulnerability" : ["remediates"], "tool" : ["mitigates"]},
-    "malware-analysis" : {"malware" : ["characterizes"], "malware" : ["analysis-of"], "malware" : ["static-analysis-of"], "malware" : ["dynamic-analysis-of"]}
+    "course-of-action" : {"indicator" : ["investigates"],  "observed-data" : ["based-on"], "indicator" : ["mitigates"], "attack-pattern" : ["mitigates"], "malware" : ["remediates"], "vulnerability" : ["remediates"], "tool" : ["mitigates"]}
 }
 
 

@@ -131,16 +131,3 @@ def create_course_of_actions(count):
     ]
     return [CourseOfAction(name=random.choice(templates).format(fake.word().capitalize()),
                            description="Generated fake Course of Action") for _ in range(count)]
-
-def create_malware_analysis(count):
-    templates = [
-        "Cuckoo {} Box",
-        "Retro {} MultiScanner",
-        "{} Analysis",
-        "{} bytes",
-        "{} Pro",
-        "X{} ware",
-        "Wire {}",
-    ]
-    return [MalwareAnalysis(name=random.choice(templates).format(fake.word().capitalize()),
-                            description="Generated fake Malware Analysis") for _ in range(count)]
