@@ -3,7 +3,7 @@ from stix_object_builder import (
     create_threat_actors, create_identities, create_malware,
     create_indicators, create_attack_patterns, create_tools,
     create_campaigns, create_intrusion_sets, create_vulnerabilities, 
-    create_course_of_actions, create_malware_analysis
+    create_course_of_actions
 )
 from relationship_builder import randomly_connect_objects
 from stix_bundler import create_bundle
