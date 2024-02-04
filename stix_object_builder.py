@@ -140,7 +140,7 @@ def create_malware_analysis(count):
         "{} bytes",
         "{} Pro",
         "X{} ware",
-        "Wire {}"
+        "Wire {}",
     ]
     return [MalwareAnalysis(name=random.choice(templates).format(fake.word().capitalize()),
                             description="Generated fake Malware Analysis") for _ in range(count)]
