@@ -11,7 +11,8 @@ relationship_map = {
     "intrusion-set": {"campaign": ["part-of"], "threat-actor": ["attributed-to"]},
     "vulnerability": {"malware": ["exploits"]},
     "attack-pattern": {"malware": ["delivers"],"identity": ["targets"], "vulnerability": ["targets"],"tool": ["uses"] },
-    "tool": {"threat-actor": ["uses"], "malware": ["uses"]}
+    "tool": {"threat-actor": ["uses"], "malware": ["uses"]},
+    "course-of-action" : {"indicator" : ["investigates"],  "observed-data" : ["based-on"], "indicator" : ["mitigates"], "attack-pattern" : ["mitigates"], "malware" : ["remediates"], "vulnerability" : ["remediates"], "tool" : ["mitigates"]} 
 }
 
 
