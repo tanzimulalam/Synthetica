@@ -1,5 +1,5 @@
 from faker import Faker
-from stix2 import ThreatActor, Identity, Malware, Tool, Indicator, AttackPattern, Campaign, IntrusionSet, Vulnerability
+from stix2 import ThreatActor, Identity, Malware, Tool, Indicator, AttackPattern, Campaign, IntrusionSet, Vulnerability, CourseOfAction
 import random
 
 fake = Faker()
@@ -121,3 +121,15 @@ def create_tools(count):
     return [Tool(name=random.choice(templates).format(fake.word().capitalize()),
                  description="Generated fake Tool") for _ in range(count)]
 
+def create_course_of_actions(count):
+    templates = [
+        "Mitigate {} Vulnerability",
+        "Prevent {} Attack",
+        "Respond to {} Incident",
+        "Improve {} Security Posture",
+        "Patch {} Software"
+    ]
+    return [CourseOfAction(name=random.choice(templates).format(fake.word().capitalize()),
+                           description="Generated fake Course of Action",
+                           action_type="mitigation" # or "prevention", "response" based on the chosen template
+                           ) for _ in range(count)]
