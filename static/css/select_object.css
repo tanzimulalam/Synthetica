@@ -1,0 +1,221 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #282b30;
+    color: white;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15),
+                inset 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #61dafb;
+    text-shadow: 1px 1px 2px black;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.stix-objects {
+    margin-bottom: 30px;
+}
+
+.stix-object {
+    background-color: #32353b;
+    color: #7289da;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15),
+                inset 4px 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.stix-object:hover, .stix-object:focus {
+    background-color: #5b6eae;
+    color: white;
+    transform: scale(1.05);
+    outline: none;
+}
+
+.stix-object, .entity, input[type='submit'], input[type='number'], .stix-visualizer-button {
+    background-color: #32353b;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #1b1e21,
+                -4px -4px 8px #35393f;
+    transition: box-shadow 0.3s ease;
+}
+
+.stix-object:hover, .stix-object:focus, .entity:hover, input[type='submit']:hover, .stix-visualizer-button:hover {
+    box-shadow: inset 4px 4px 8px #1b1e21,
+                inset -4px -4px 8px #35393f;
+}
+
+.stix-object.selected {
+    background-color: #7289da;
+    color: white;
+    box-shadow: 0 2px 4px #5b6eae;
+}
+
+.selected-entities, .entity {
+    margin-top: 20px;
+    border: 2px solid #7289da;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.entity:hover {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #7289da;
+}
+
+input[type='number'] {
+    width: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+input[type='submit'] {
+    background-color: #7289da;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px #5b6eae;
+}
+
+input[type='submit']:hover {
+    background-color: #5b6eae;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px #7289da;
+}
+
+#selected-entities-form {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #32353b;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+#generate-graph, #copy-json {
+    color: white;
+    border: 2px solid #7289da;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px auto;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: auto;
+}
+
+#generate-graph {
+    background-color: #7289da;
+}
+
+#copy-json {
+    background-color: #7289da;
+}
+
+#generate-graph:hover {
+    background-color: #5b6eae;
+    border-color: #5b6eae;
+    box-shadow: 0 2px 4px #5b6eae;
+}
+
+#copy-json:hover {
+    background-color: #5b6eae;
+    border-color: #5b6eae;
+    box-shadow: 0 2px 4px #5b6eae;
+}
+
+.stix-visualizer-button {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 40px);
+    background-color: #32353b;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px auto;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.5s ease;
+}
+
+.visualizer-button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+}
+
+
+
+.stix-visualizer-button:hover {
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.75);
+}
+
+footer {
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: #61dafb;
+  margin: 0 10px;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        margin-top: 25px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+    .selected-entities, .entity {
+        display: block;
+        margin-right: 0;
+    }
+}
