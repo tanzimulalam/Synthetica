@@ -3,7 +3,7 @@ from stix_object_builder import (
     create_threat_actors, create_identities, create_malware,
     create_indicators, create_attack_patterns, create_tools,
     create_campaigns, create_intrusion_sets, create_vulnerabilities, 
-    create_course_of_actions
+    create_course_of_actions, create_malware_analysis
 )
 from relationship_builder import randomly_connect_objects
 from stix_bundler import create_bundle
@@ -30,6 +30,7 @@ def generate_graph():
     intrusion_sets_count = int(data.get('intrusion-set-count', 0))
     vulnerabilities_count = int(data.get('vulnerability-count', 0))
     course_of_actions_count = int(data.get('course-of-action-count', 0))
+    malware_analysis_count = int(data.get('malware-analysis-count', 0))
 
     threat_actors = create_threat_actors(threat_actor_count) if threat_actor_count > 0 else []
     identities = create_identities(identity_count) if identity_count > 0 else []
@@ -41,8 +42,9 @@ def generate_graph():
     intrusion_sets = create_intrusion_sets(intrusion_sets_count) if intrusion_sets_count > 0 else []
     vulnerabilities = create_vulnerabilities(vulnerabilities_count) if vulnerabilities_count > 0 else []
     course_of_actions = create_course_of_actions(course_of_actions_count) if course_of_actions_count > 0 else []
+    malware_analysis = create_malware_analysis(malware_analysis_count) if malware_analysis_count > 0 else []
 
-    stix_objects = threat_actors + identities + malwares + indicators + attack_patterns + tools + campaigns + intrusion_sets + vulnerabilities + course_of_actions
+    stix_objects = threat_actors + identities + malwares + indicators + attack_patterns + tools + campaigns + intrusion_sets + vulnerabilities + course_of_actions + malware_analysis
 
 
     for obj in stix_objects:
