@@ -131,5 +131,4 @@ def create_course_of_actions(count):
     ]
     return [CourseOfAction(name=random.choice(templates).format(fake.word().capitalize()),
                            description="Generated fake Course of Action",
-                           action_type="mitigation" # or "prevention", "response" based on the chosen template
                            ) for _ in range(count)]
