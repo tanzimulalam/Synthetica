@@ -1,5 +1,5 @@
 from faker import Faker
-from stix2 import ThreatActor, Identity, Malware, Tool, Indicator, AttackPattern, Campaign, IntrusionSet, Vulnerability, CourseOfAction, MalwareAnalysis
+from stix2 import ThreatActor, Identity, Malware, Tool, Indicator, AttackPattern, Campaign, IntrusionSet, Vulnerability, CourseOfAction, MalwareAnalysis, Location
 import random
 
 fake = Faker()
@@ -131,3 +131,15 @@ def create_course_of_actions(count):
     ]
     return [CourseOfAction(name=random.choice(templates).format(fake.word().capitalize()),
                            description="Generated fake Course of Action") for _ in range(count)]
+
+def create_locations(count):
+    templates = [
+        "{} Headquarters",
+        "{} Datacenter",
+        "{} Office",
+        "{} Facility",
+        "{} Campus"
+    ]
+
+
+    return [Location(name=random.choice(templates).format(fake.word).capitalize(), latitude=fake.latitude(), longitude=fake.longitude()) for _ in range(count)]
