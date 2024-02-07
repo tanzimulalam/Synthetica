@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select STIX Objects</title>
+    <title>Synthetica SDOs</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/select_object.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Select STIX Entities</h1>
+        <h1>Select Synthetica STIX Entities</h1>
         <div class="stix-objects">
             <button type="button" class="stix-object" data-object="threat-actor">Threat Actor</button>
             <button type="button" class="stix-object" data-object="malware">Malware</button>
@@ -27,7 +27,7 @@
             <button id="copy-json" type="button">Copy JSON</button>
         </div>
         <div class="selected-entities">
-            <h2>Selected Entities</h2>
+            <h2>Selected Synthetica STIX Entities</h2>
             <form id="selected-entities-form">
                 <div id="selected-list"></div>
                 <input type="button" id="generate-graph" value="Generate Graph">
@@ -37,8 +37,7 @@
     </div>
 
     <footer>
-        <p>© Raj, Fahim, Harry, and Andrew for Hack NCState Hackathon 2024</p>
-        <a href="https://www.uncp.edu">University of North Carolina at Pembroke</a>
+        <a href="https://www.ncsu-las.org">Laboratory for Analytic Sciences/NSA </a><a href="https://www.uncp.edu">The University of North Carolina at Pembroke</a>
     </footer>
 
     <script src="{{ url_for('static', filename='js/select_objects.js') }}"></script>

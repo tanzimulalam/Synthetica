@@ -138,11 +138,16 @@ def create_locations(count):
         "{} Datacenter",
         "{} Office",
         "{} Facility",
+        "{} Building",
+        "{} Room",
+        "{} Lab",
+        "{} Department",
+        "{} Company",
         "{} Campus"
     ]
 
 
-    return [Location(name=random.choice(templates).format(fake.word).capitalize(), latitude=fake.latitude(), longitude=fake.longitude()) for _ in range(count)]
+    return [Location(name=random.choice(templates).format(fake.word).capitalize(), latitude=fake.latitude(), longitude=fake.longitude(), city=fake.city(), country=fake.country(), street_address=fake.street_address(), postal_code=fake.postcode(), region=fake.state()) for _ in range(count)]
 
 def create_malware_analysis(count):
     
