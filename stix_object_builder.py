@@ -1,5 +1,5 @@
 from faker import Faker
-from stix2 import ThreatActor, Identity, Malware, Tool, Indicator, AttackPattern, Campaign, IntrusionSet, Vulnerability, CourseOfAction, MalwareAnalysis, Location
+from stix2 import ThreatActor, Identity, Malware, Tool, Indicator, AttackPattern, Campaign, IntrusionSet, Vulnerability, CourseOfAction, Location, MalwareAnalysis
 import random
 
 fake = Faker()
@@ -143,3 +143,14 @@ def create_locations(count):
 
 
     return [Location(name=random.choice(templates).format(fake.word).capitalize(), latitude=fake.latitude(), longitude=fake.longitude()) for _ in range(count)]
+
+def create_malware_analysis(count):
+    templates = [
+        "{} Malware Analysis",
+        "{} Malware Analysis",
+        "{} Malware Analysis",
+        "{} Malware Analysis",
+        "{} Malware Analysis"
+    ]
+    return [MalwareAnalysis(name=random.choice(templates).format(fake.word().capitalize()),
+                           description="Generated fake Malware Analysis") for _ in range(count)]
