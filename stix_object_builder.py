@@ -145,12 +145,16 @@ def create_locations(count):
     return [Location(name=random.choice(templates).format(fake.word).capitalize(), latitude=fake.latitude(), longitude=fake.longitude()) for _ in range(count)]
 
 def create_malware_analysis(count):
-    templates = [
-        "{} Malware Analysis",
-        "{} Malware Analysis",
-        "{} Malware Analysis",
-        "{} Malware Analysis",
-        "{} Malware Analysis"
-    ]
-    return [MalwareAnalysis(name=random.choice(templates).format(fake.word().capitalize()),
-                           description="Generated fake Malware Analysis") for _ in range(count)]
+    
+    templates = ["{} VirusTotal",
+                     "{} Hybrid Analysis", 
+                     "{} Malwarebytes", 
+                     "{} Kaspersky Lab", 
+                     "{} McAfee"]
+    
+    return [MalwareAnalysis(product=random.choice(templates).format(fake.word).capitalize(),
+                            version=fake.random_element(elements=("1.0", "2.0", "3.0", "4.0")),
+                            analysis_engine_version=fake.random_element(elements=("1.0", "2.0", "3.0", "4.0")),
+                            analysis_definition_version=fake.random_element(elements=("1.0", "2.0", "3.0", "4.0")),
+                            result=fake.random_element(elements=("malicious", "suspicious", "clean")),
+                            ) for _ in range(count)]
